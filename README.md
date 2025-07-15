@@ -63,7 +63,7 @@ where
 
 The concentration ranged from **0.12** (which is the assumed initial solid concentration based on the data in the current literature) to approximately **0.199**. Data suggests it is optimal solid content for condensed milk available in markets. Reduction in pressure below a certain limit decreases concentration, while increasing temperature steadily improves it.
 
-![Grid Contour](conc_grid_contour.png)
+![Grid Contour](plots/conc_grid_contour.png)
 ### Contour Plot
 
 ## Key Insights
@@ -77,10 +77,10 @@ The concentration ranged from **0.12** (which is the assumed initial solid conce
 
 * Lower pressures enhance results, but gains slow below **15 kPa** due to high energy costs.
 
-![Pressure Plot](conc_vs_pressure.png)
+![Pressure Plot](plots/conc_vs_pressure.png)
 ### Pressure vs Concentration
 
-![Temperature Plot](conc_vs_temp.png)
+![Temperature Plot](plots/conc_vs_temp.png)
 ### Temperature vs Concentration
 
 ## Optimization Tips
