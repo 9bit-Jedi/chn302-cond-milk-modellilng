@@ -1,5 +1,5 @@
 # CHN-302 Condensed Milk Modeling
-Numerical Modeling and Optimization of Evaporated and Condensed Milk Production - [Final Report](Final_Report.pdf)
+Numerical Modeling and Optimization of Evaporated and Condensed Milk Production - [Final_Report.pdf](https://github.com/9bit-Jedi/chn302-cond-milk-modellilng/blob/main/Final%20report.pdf)
 
 ## Introduction & Objectives
 
@@ -18,39 +18,46 @@ Here’s a clean version with **titles and equations**, including **key notation
 
 1. Mass Balance (Solids)
 
-```latex
-\dot{m}_{\text{feed}} \cdot X_0 = \dot{m}_{\text{concentrate}} \cdot X_{\text{final}}
-```
-2. Energy Balance
+## Governing Equations
 
-```latex
-Q = \dot{m}_{\text{steam}} \cdot \lambda_{\text{steam}} = \dot{m}_{\text{vapor}} \cdot \lambda_{\text{solution}} + \dot{m}_{\text{feed}} \cdot c_p \cdot (T_{\text{solution}} - T_{\text{inlet}})
+1. **Mass Balance (Solids)**  
 ```
-3. Heat Transfer Equation
+ṁ_feed * X₀ = ṁ_concentrate * X_final
+```
 
-```latex
-Q = U \cdot A \cdot \Delta T_{\text{LM}} \quad \text{(kW)}
+2. **Energy Balance**  
 ```
-4. Vapor Generation Rate
+Q = ṁ_steam * λ_steam = ṁ_vapor * λ_solution + ṁ_feed * c_p * (T_solution - T_inlet)
+```
 
-```latex
-\dot{m}_{\text{vapor}} = \frac{U \cdot A \cdot \Delta T_{\text{LM}}}{\lambda_{\text{solution}}}
+3. **Heat Transfer Equation**  
 ```
-5. Final Solids Concentration
+Q = U * A * ΔT_LM   (kW)
+```
 
-```latex
-X_{\text{final}} = \frac{X_0}{1 - \left(\frac{\dot{m}_{\text{vapor}}}{\dot{m}_{\text{feed}}}\right)}
+4. **Vapor Generation Rate**  
 ```
-6. Boiling Point Elevation
+ṁ_vapor = (U * A * ΔT_LM) / λ_solution
+```
 
-```latex
-\Delta T_b = K_b \cdot m \cdot i
+5. **Final Solids Concentration**  
 ```
-7. Antoine Equation (Boiling Point from Pressure)
+X_final = X₀ / [1 - (ṁ_vapor / ṁ_feed)]
+```
 
-```latex
-T_{\text{boil}} = \frac{B}{A - \log_{10}(P_{\text{mmHg}})} - C
+6. **Boiling Point Elevation**  
 ```
+ΔT_b = K_b * m * i
+```
+
+7. **Antoine Equation (Boiling Point from Pressure)**  
+```
+T_boil = B / (A - log₁₀(P_mmHg)) - C
+```
+where  
+`P_mmHg = P_kPa * 7.50062`  
+`A = 8.07131`, `B = 1730.63`, `C = 233.426`
+
 
 ## Numerical Results
 
